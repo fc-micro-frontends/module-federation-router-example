@@ -3,7 +3,7 @@ import { inject } from "app_jobs/injector";
 import { useLocation, useNavigate } from "react-router-dom";
 import { appJobsBasename } from "../constants/prefix";
 
-export default () => {
+export default function AppJobs() {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
   const location = useLocation();
@@ -55,4 +55,4 @@ export default () => {
   useEffect(() => unmountRef.current, []);
 
   return <div ref={wrapperRef} id="app-jobs" />;
-};
+}

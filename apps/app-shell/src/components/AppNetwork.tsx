@@ -3,7 +3,7 @@ import { inject } from "app_network/injector";
 import { useLocation, useNavigate } from "react-router-dom";
 import { appNetworkBasename } from "../constants/prefix";
 
-export default () => {
+export default function AppNetwork() {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
   const location = useLocation();
@@ -58,4 +58,4 @@ export default () => {
   useEffect(() => unmountRef.current, []);
 
   return <div ref={wrapperRef} id="app-network" />;
-};
+}
